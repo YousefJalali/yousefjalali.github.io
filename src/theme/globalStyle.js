@@ -33,4 +33,19 @@ h2 {
   font-weight: 600;
   margin: 0;
 }
+h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0 0 1.5rem 0;
+}
+h4 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin: 0;
+}
+p {
+  font-size: 1.6rem;
+  font-weight: 300;
+  margin: 0;
+}
 `;

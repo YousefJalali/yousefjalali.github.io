@@ -1,28 +1,19 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { ThemeProvider } from "styled-components";
 
-class App extends Component {
+import { GlobalStyle } from "./theme/globalStyle";
+import { light } from "./theme/theme";
+import Home from "./pages/home";
+
+export default class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Hello hello
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <ThemeProvider theme={light}>
+        <>
+          <GlobalStyle />
+          <Home />
+        </>
+      </ThemeProvider>
     );
   }
 }
-
-export default App;

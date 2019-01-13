@@ -12,6 +12,7 @@ body {
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  text-align: center;
 }
 section {
   height: 100vh;
@@ -21,6 +22,7 @@ section {
   background-color: ${props => props.theme.secondary};
   color: ${props => props.theme.primary};
   overflow: hidden;
+  position: relative;
 }
 
 h1 {

@@ -15,7 +15,7 @@ body {
   text-align: center;
 }
 section {
-  height: 100vh;
+  /* height: 100vh; */
   width: 100%;
   padding: 0 2rem;
   box-sizing: border-box;
@@ -49,5 +49,8 @@ p {
   font-size: 1.6rem;
   font-weight: 300;
   margin: 0;
+}
+span {
+  font-weight: 800;
 }
 `;

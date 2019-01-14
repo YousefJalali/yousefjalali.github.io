@@ -2,8 +2,9 @@ import React from "react";
 import styled from "styled-components";
 
 import { ICONS } from "../assets/ICONS";
+import Card from '../theme/card';
 
-export default class Home extends React.Component {
+export default class About extends React.Component {
   state = {
     skills: [
       {
@@ -44,13 +45,13 @@ export default class Home extends React.Component {
       {
         id: "ui",
         name: "UI/UX",
-        percentage: 70
+        percentage: 80
       }
     ]
   };
   render() {
     return (
-      <section style={{ padding: 0, height: "100%" }}>
+      <section style={{ padding: 0, height: "100%", marginBottom: "8rem" }}>
         <Background />
         <Summary>
           <h3>Hello,</h3>
@@ -146,24 +147,6 @@ const Summary = styled.div`
   
 `;
 
-const Card = styled.div`
-  position: relative;
-  width: 90%;
-  height: 30rem;
-  border: 1px solid #eee;
-  padding: 2rem 0;
-  margin: 2rem auto;
-  border-radius: 2rem;
-  box-sizing: border-box;
-  background-color: ${props => props.theme.secondary};
-  color: ${props => props.theme.primary};
-
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-`;
-
 const Service = styled.div`
   width: 40%;
   display: flex;
@@ -174,6 +157,9 @@ const Service = styled.div`
 
   p {
     font-size: 0.8rem;
+  }
+  h4 {
+    margin-bottom: .2rem;
   }
 `;
 
@@ -193,10 +179,14 @@ const Icon = styled.svg`
 `;
 
 const Bar = styled.div`
-  height: 2rem;
+  height: 1.5rem;
   width: 90%;
   background-color: #eee;
   position: relative;
+
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
 `;
 
 const Label = styled.div`
@@ -205,15 +195,18 @@ const Label = styled.div`
   left: 0;
   height: 100%;
   width: 20%;
-  background-color: ${props => props.theme.tertiary};
-  color: ${props => props.theme.secondary};
+  background-color: ${props => props.theme.secondary};
+  color: ${props => props.theme.primary};
+  
 
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 
   h4 {
     font-size: 0.8rem;
+    margin-right: 0.5rem;
+    
   }
 `;
 

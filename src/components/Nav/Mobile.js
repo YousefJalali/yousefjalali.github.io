@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-
 import ScrollLock from "react-scrolllock";
+
+import Link from "../../theme/link";
 
 export default props => {
   return (
@@ -9,7 +10,9 @@ export default props => {
       <ul>
         {props.items.map(item => (
           <li key={item.name} onClick={() => props.onItemClick(item.name)}>
-            <h3>{item.name}</h3>
+            <Link>
+              <h3>{item.name}</h3>
+            </Link>
           </li>
         ))}
       </ul>

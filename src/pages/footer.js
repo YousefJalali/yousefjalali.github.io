@@ -28,14 +28,16 @@ export default class Footer extends React.Component {
       <Section id="contact">
         <Background />
         {/* <Contact /> */}
-        {this.state.isContactFormOpen ? <Contact onClose={this.contactFormCloser} /> : null}
-        <Card>
+        {this.state.isContactFormOpen ? (
+          <Contact onClose={this.contactFormCloser} />
+        ) : null}
+        <CustomCard column>
           <h3>Start a project</h3>
           <p style={{ fontSize: "1rem", width: "60%" }}>
             Interested in working together? We should queue up a chat.
           </p>
           <Button title="let's do it" onClick={this.contactFormOpener} />
-        </Card>
+        </CustomCard>
         <Social>
           <a
             href="https://www.facebook.com/ucef.jalali"
@@ -79,6 +81,10 @@ export default class Footer extends React.Component {
 
 const Section = styled.section`
   height: 50vh;
+  width: 100vw;
+  max-width: none;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -94,14 +100,22 @@ const Background = styled.div`
   background-color: ${props => props.theme.primary};
 `;
 
+const CustomCard = styled(Card)`
+  min-height: fit-content;
+`;
+
 const Social = styled.div`
   position: relative;
   height: 5rem;
   width: 40%;
 
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+
+  a:not(:last-child) {
+    margin-right: 2rem;
+  }
 `;
 
 const Icon = styled.svg`

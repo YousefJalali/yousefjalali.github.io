@@ -15,5 +15,5 @@ export default class Work extends React.Component {
 }
 
 const Phone = styled.img`
-  width: 90%;
+  height: 100vh;
 `;

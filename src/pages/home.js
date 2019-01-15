@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { ICONS } from "../assets/ICONS";
 import BurgerButton from "../components/Nav/BurgerButton";
 import MobileNav from "../components/Nav/Mobile";
+import DesktopNav from "../components/Nav/Desktop";
 import Brain from "../assets/brain.svg";
 
 export default class Home extends React.Component {
@@ -45,16 +46,25 @@ export default class Home extends React.Component {
   };
 
   render() {
+    const screenWidth = window.innerWidth;
     return (
       <section id="home">
         <Nav>
           <Logo viewBox="0 0 40 40">
             <path d={ICONS.logo.d} transform={ICONS.logo.transform} />
           </Logo>
-          <BurgerButton
-            onClick={this.burgerButtonHandler}
-            isOpen={!this.state.isMenuModalVisible}
-          />
+
+          {screenWidth < 1000 ? (
+            <BurgerButton
+              onClick={this.burgerButtonHandler}
+              isOpen={!this.state.isMenuModalVisible}
+            />
+          ) : (
+            <DesktopNav
+              items={this.state.menu}
+              onItemClick={this.scrollHandler}
+            />
+          )}
         </Nav>
         {this.state.isMenuModalVisible ? (
           <MobileNav items={this.state.menu} onItemClick={this.scrollHandler} />

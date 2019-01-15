@@ -1,9 +1,20 @@
 import { createGlobalStyle } from "styled-components";
+import media from 'styled-media-query';
 
 export const GlobalStyle = createGlobalStyle`
 /* @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800'); */
 html {
-  font-size: 10px;
+  ${media.lessThan("medium")`
+    font-size: 10px;
+  `};
+
+  ${media.between("medium", "large")`
+    font-size: 13px;
+  `};
+
+  ${media.greaterThan("large")`
+    font-size: 16px;
+  `};
 }
 body {
   margin: 0;
@@ -15,11 +26,13 @@ body {
   text-align: center;
 }
 section {
-  /* height: 100vh; */
   width: 100%;
+  max-width: 90rem;
+  /* min-height: 100vh; */
+  margin: 0 auto;
   padding: 0 2rem;
   box-sizing: border-box;
-  background-color: ${props => props.theme.secondary};
+  /* background-color: ${props => props.theme.secondary}; */
   color: ${props => props.theme.primary};
   overflow: hidden;
   position: relative;
@@ -38,7 +51,7 @@ h2 {
 h3 {
   font-size: 2rem;
   font-weight: 800;
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 2rem 0;
 }
 h4 {
   font-size: 1.2rem;

@@ -7,10 +7,17 @@ const Link = styled.button`
   border: 0;
   padding: 0;
   margin: 0;
+  font-size: 2rem;
+  font-weight: 800;
+  cursor: pointer;
 
   &:active {
-    outline: none;
+    outline: 0;
     color: ${props => props.theme.tertiary};
+  }
+
+  &:focus {
+    outline: 0;
   }
 
   &:visited {

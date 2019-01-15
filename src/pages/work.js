@@ -6,7 +6,7 @@ import phone from "../assets/phone.svg";
 export default class Work extends React.Component {
   render() {
     return (
-      <section style={{ padding: 0, height: "100%" }}>
+      <section style={{ padding: 0, height: "100%" }} id="work">
         <h3>Recent work</h3>
         <Phone src={phone} alt="phone" />
       </section>

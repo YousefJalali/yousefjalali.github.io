@@ -15,6 +15,7 @@ const Button = styled.button`
   color: ${props => props.theme.tertiary};
   border: 1px solid ${props => props.theme.tertiary};
   border-radius: 5rem;
+  cursor: pointer;
 
   &:focus {
     outline: 0;

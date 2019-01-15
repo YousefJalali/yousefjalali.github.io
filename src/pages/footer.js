@@ -25,7 +25,7 @@ export default class Footer extends React.Component {
   render() {
     const year = new Date().getFullYear();
     return (
-      <Section>
+      <Section id="contact">
         <Background />
         {/* <Contact /> */}
         {this.state.isContactFormOpen ? <Contact onClose={this.contactFormCloser} /> : null}

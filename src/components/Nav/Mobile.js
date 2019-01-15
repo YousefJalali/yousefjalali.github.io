@@ -1,28 +1,36 @@
 import React from "react";
 import styled from "styled-components";
 
-export default () => {
+import ScrollLock from "react-scrolllock";
+
+export default props => {
   return (
-    <Burger>
-      <Bar />
-      <Bar middle />
-      <Bar />
-    </Burger>
+    <Overlay>
+      <ul>
+        {props.items.map(item => (
+          <li key={item.name} onClick={() => props.onItemClick(item.name)}>
+            <h3>{item.name}</h3>
+          </li>
+        ))}
+      </ul>
+      <ScrollLock />
+    </Overlay>
   );
 };
 
-const Burger = styled.div`
-  height: 2.7rem;
-  width: 4rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-end;
-`;
-
-const Bar = styled.div`
-  height: 0.5rem;
-  width: ${props => (props.middle ? "2.5rem" : "4rem")};
+const Overlay = styled.div`
+  position: fixed;
+  z-index: 1000;
+  overflow: hidden;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* background-color: rgba(0, 0, 0, .2); */
   background-color: ${props => props.theme.primary};
-  border-radius: 2.5rem;
+  color: ${props => props.theme.secondary};
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;

@@ -7,7 +7,7 @@ import CarouselItem from "../components/Carousel/CarouselItem";
 export default class Experiences extends React.Component {
   render() {
     return (
-      <section>
+      <section id="experiences">
         <h3>Experiences</h3>
         <div>
           <Carousel>

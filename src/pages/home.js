@@ -2,19 +2,63 @@ import React from "react";
 import styled from "styled-components";
 
 import { ICONS } from "../assets/ICONS";
-import MobileMenu from "../components/Nav/Mobile";
+import BurgerButton from "../components/Nav/BurgerButton";
+import MobileNav from "../components/Nav/Mobile";
 import Brain from "../assets/brain.svg";
 
 export default class Home extends React.Component {
+  state = {
+    isMenuModalVisible: false,
+    menu: [
+      {
+        name: "home"
+      },
+      {
+        name: "about"
+      },
+      {
+        name: "work"
+      },
+      {
+        name: "experiences"
+      },
+      {
+        name: "contact"
+      }
+    ]
+  };
+
+  burgerButtonHandler = () => {
+    this.setState(prevState => {
+      return {
+        isMenuModalVisible: !prevState.isMenuModalVisible
+      };
+    });
+  };
+
+  scrollHandler = id => {
+    this.setState({ isMenuModalVisible: false });
+    document.getElementById(id).scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  };
+
   render() {
     return (
-      <section>
+      <section id="home">
         <Nav>
           <Logo viewBox="0 0 40 40">
             <path d={ICONS.logo.d} transform={ICONS.logo.transform} />
           </Logo>
-          <MobileMenu />
+          <BurgerButton
+            onClick={this.burgerButtonHandler}
+            isOpen={!this.state.isMenuModalVisible}
+          />
         </Nav>
+        {this.state.isMenuModalVisible ? (
+          <MobileNav items={this.state.menu} onItemClick={this.scrollHandler} />
+        ) : null}
         <Intro>
           <h1>Yousef jalali</h1>
           <h2>Front-end developer</h2>

@@ -51,7 +51,7 @@ export default class About extends React.Component {
   };
   render() {
     return (
-      <section style={{ padding: 0, height: "100%", marginBottom: "8rem" }}>
+      <section style={{ padding: 0, height: "100%", marginBottom: "8rem" }} id="about">
         <Background />
         <Summary>
           <h3>Hello,</h3>

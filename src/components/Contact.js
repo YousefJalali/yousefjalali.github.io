@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import ScrollLock from "react-scrolllock";
 
 import Input from "../components/Input";
 import Button from "../components/Button";
@@ -139,6 +140,7 @@ export default class Contact extends React.Component {
             </form>
           </Container>
         </Wrapper>
+        <ScrollLock />
       </Overlay>
     );
   }

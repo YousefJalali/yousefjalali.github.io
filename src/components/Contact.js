@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import media from 'styled-media-query';
 import ScrollLock from "react-scrolllock";
 
 import Input from "../components/Input";
@@ -166,7 +167,7 @@ const Wrapper = styled.div`
 `;
 
 const Container = styled.div`
-  width: 100%;
+  
   background-color: ${props => props.theme.secondary};
   border-radius: 1rem;
   padding: 3rem 1rem;
@@ -177,6 +178,18 @@ const Container = styled.div`
     opacity: 0.2;
     margin-bottom: 3rem;
   }
+
+  ${media.lessThan("medium")`
+    width: 100%;
+  `};
+
+  ${media.between("medium", "large")`
+    width: 100%;
+  `};
+
+  ${media.greaterThan("large")`
+    width: 50%;
+  `};
 `;
 
 const CloseBtn = styled.div`

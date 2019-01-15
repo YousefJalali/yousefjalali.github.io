@@ -4,33 +4,72 @@ import styled from "styled-components";
 import { ICONS } from "../assets/ICONS";
 import Card from "../theme/card";
 import Button from "../components/Button";
+import Contact from "../components/Contact";
 
 export default class Footer extends React.Component {
+  state = {
+    isContactFormOpen: false
+  };
+
+  contactFormOpener = () => {
+    this.setState({
+      isContactFormOpen: true
+    });
+  };
+  contactFormCloser = () => {
+    this.setState({
+      isContactFormOpen: false
+    });
+  };
+
   render() {
+    const year = new Date().getFullYear();
     return (
       <Section>
         <Background />
+        {/* <Contact /> */}
+        {this.state.isContactFormOpen ? <Contact onClose={this.contactFormCloser} /> : null}
         <Card>
           <h3>Start a project</h3>
           <p style={{ fontSize: "1rem", width: "60%" }}>
             Interested in working together? We should queue up a chat.
           </p>
-          <Button title="let's do it" />
+          <Button title="let's do it" onClick={this.contactFormOpener} />
         </Card>
         <Social>
-          <Icon viewBox="0 0 32 32">
-            <path d={ICONS.facebook.d} transform={ICONS.facebook.transform} />
-          </Icon>
-          <Icon viewBox="0 0 32 32">
-            <path d={ICONS.linkedIn.d} transform={ICONS.linkedIn.transform} />
-          </Icon>
-          <Icon viewBox="0 0 32 32">
-            <path d={ICONS.github.d} transform={ICONS.github.transform} />
-          </Icon>
+          <a
+            href="https://www.facebook.com/ucef.jalali"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon viewBox="0 0 32 32">
+              <path d={ICONS.facebook.d} transform={ICONS.facebook.transform} />
+            </Icon>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/yousef-jalali/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon viewBox="0 0 32 32">
+              <path d={ICONS.linkedIn.d} transform={ICONS.linkedIn.transform} />
+            </Icon>
+          </a>
+
+          <a
+            href="https://github.com/YousefJalali"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon viewBox="0 0 32 32">
+              <path d={ICONS.github.d} transform={ICONS.github.transform} />
+            </Icon>
+          </a>
         </Social>
         <Credit>
           <p>
-            designed by <span>Yousef jalali</span>
+            YOUSEF JALALI <span>&copy;{year}</span>
           </p>
         </Credit>
       </Section>
@@ -40,10 +79,9 @@ export default class Footer extends React.Component {
 
 const Section = styled.section`
   height: 50vh;
-  padding-bottom: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 `;
 
@@ -74,6 +112,11 @@ const Icon = styled.svg`
   border-radius: 0.5rem;
   box-sizing: border-box;
   padding: 0.3rem;
+
+  &:active {
+    background-color: ${props => props.theme.secondary};
+    fill: ${props => props.theme.primary};
+  }
 `;
 
 const Credit = styled.div`

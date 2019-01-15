@@ -30,6 +30,11 @@ const Button = styled.button`
     border: 1px solid #ccc;
     color: #ccc;
   }
+  &:hover {
+    background-color: ${props => props.theme.tertiary};
+    color: ${props => props.theme.secondary};
+    transition: background-color 0.3s ease-out, color 0.3s ease-out;
+  }
 
   h2 {
     text-transform: uppercase;

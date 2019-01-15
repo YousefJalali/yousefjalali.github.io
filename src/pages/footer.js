@@ -131,6 +131,11 @@ const Icon = styled.svg`
     background-color: ${props => props.theme.secondary};
     fill: ${props => props.theme.primary};
   }
+  &:hover {
+    background-color: ${props => props.theme.secondary};
+    fill: ${props => props.theme.primary};
+    transition: background-color 0.3s ease-out, fill 0.3s ease-out;
+  }
 `;
 
 const Credit = styled.div`

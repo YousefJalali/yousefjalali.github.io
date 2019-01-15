@@ -219,6 +219,7 @@ const IconWrapper = styled.div`
 
 const Icon = styled.svg`
   height: 3.8rem;
+  fill: ${props => props.theme.primary}
 `;
 
 const Bar = styled.div`

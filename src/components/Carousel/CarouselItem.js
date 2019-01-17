@@ -2,11 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 export default props => {
-  return (
-    <Item>
-      Item {props.index} of {props.numSlides}
-    </Item>
-  );
+  return <Item>{props.children}</Item>;
 };
 
 const Item = styled.div`
@@ -16,6 +12,11 @@ const Item = styled.div`
   padding-bottom: 100%;
   height: 0;
   color: ${props => props.theme.secondary};
-  box-shadow: 0 0 1rem  rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
   border-radius: 1rem;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+  }
 `;

@@ -4,6 +4,11 @@ import styled from "styled-components";
 import Carousel from "../components/Carousel/Carousel";
 import CarouselItem from "../components/Carousel/CarouselItem";
 
+import buttonGIF from "../assets/button.gif";
+import burgerGIF from "../assets/burger.gif";
+import inputGIF from "../assets/input.gif";
+import buttonArrowGIF from "../assets/button-arrow.gif";
+
 export default class Experiences extends React.Component {
   render() {
     const screenWidth = window.innerWidth;
@@ -12,17 +17,33 @@ export default class Experiences extends React.Component {
         <h3>Experiences</h3>
         {screenWidth < 700 ? (
           <Carousel>
-            <CarouselItem index={1} />
-            <CarouselItem index={2} />
-            <CarouselItem index={3} />
-            <CarouselItem index={4} />
+            <CarouselItem index={1}>
+              <img src={buttonGIF} alt="button" />
+            </CarouselItem>
+            <CarouselItem index={2}>
+              <img src={burgerGIF} alt="button" />
+            </CarouselItem>
+            <CarouselItem index={3}>
+              <img src={inputGIF} alt="button" />
+            </CarouselItem>
+            <CarouselItem index={4}>
+              <img src={buttonArrowGIF} alt="button" />
+            </CarouselItem>
           </Carousel>
         ) : (
           <Wrapper>
-            <Item />
-            <Item />
-            <Item />
-            <Item />
+            <Item>
+              <img src={buttonGIF} alt="button" />
+            </Item>
+            <Item>
+              <img src={burgerGIF} alt="button" />
+            </Item>
+            <Item>
+              <img src={inputGIF} alt="button" />
+            </Item>
+            <Item>
+              <img src={buttonArrowGIF} alt="button" />
+            </Item>
           </Wrapper>
         )}
       </section>
@@ -49,4 +70,9 @@ const Item = styled.div`
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
   border-radius: 1rem;
   margin: 2rem;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+  }
 `;

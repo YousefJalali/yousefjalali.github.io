@@ -5,7 +5,7 @@ import { ICONS } from "../assets/ICONS";
 import BurgerButton from "../components/Nav/BurgerButton";
 import MobileNav from "../components/Nav/Mobile";
 import DesktopNav from "../components/Nav/Desktop";
-import Brain from "../assets/brain.svg";
+import Neural from "../assets/neural.svg";
 
 export default class Home extends React.Component {
   state = {
@@ -73,9 +73,9 @@ export default class Home extends React.Component {
           <h1>Yousef jalali</h1>
           <h2>Front-end developer</h2>
         </Intro>
-        <BgImage>
-          <img src={Brain} alt="background" />
-        </BgImage>
+        {/* <BgImage>
+          <img src={Neural} alt="background" />
+        </BgImage> */}
       </section>
     );
   }

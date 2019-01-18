@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import media from 'styled-media-query';
+import media from "styled-media-query";
 
 export const GlobalStyle = createGlobalStyle`
 /* @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800'); */
@@ -30,7 +30,7 @@ section {
   max-width: 90rem;
   /* min-height: 100vh; */
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 2rem 0;
   box-sizing: border-box;
   /* background-color: ${props => props.theme.secondary}; */
   color: ${props => props.theme.primary};
@@ -75,5 +75,8 @@ li {
   &:not(:last-child) {
     margin-bottom: 1.5rem
   }
+}
+a:link, a:visited, a:hover, a:active{
+  text-decoration: none;
 }
 `;

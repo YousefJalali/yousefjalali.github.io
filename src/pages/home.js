@@ -5,7 +5,6 @@ import { ICONS } from "../assets/ICONS";
 import BurgerButton from "../components/Nav/BurgerButton";
 import MobileNav from "../components/Nav/Mobile";
 import DesktopNav from "../components/Nav/Desktop";
-import Neural from "../assets/neural.svg";
 
 export default class Home extends React.Component {
   state = {
@@ -73,18 +72,18 @@ export default class Home extends React.Component {
           <h1>Yousef jalali</h1>
           <h2>Front-end developer</h2>
         </Intro>
-        {/* <BgImage>
-          <img src={Neural} alt="background" />
-        </BgImage> */}
       </section>
     );
   }
 }
 
 const Nav = styled.nav`
-  height: 10vh;
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  right: 2rem;
+  z-index: 9999;
   box-sizing: border-box;
-  margin-top: 1rem;
 
   display: flex;
   justify-content: space-between;
@@ -98,21 +97,13 @@ const Logo = styled.svg`
 `;
 
 const Intro = styled.div`
-  height: 70vh;
+  height: 100vh;
   box-sizing: border-box;
+
+  position: relative;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`;
-
-const BgImage = styled.div`
-  height: 20vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  img {
-    width: 18rem;
-  }
 `;

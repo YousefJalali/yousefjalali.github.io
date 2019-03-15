@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 import media from "styled-media-query";
 
 export const GlobalStyle = createGlobalStyle`
-/* @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800'); */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
 html {
   ${media.lessThan("medium")`
     font-size: 10px;

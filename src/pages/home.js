@@ -53,7 +53,12 @@ export default class Home extends React.Component {
             <path d={ICONS.logo.d} transform={ICONS.logo.transform} />
           </Logo>
 
-          {screenWidth < 1000 ? (
+          <BurgerButton
+            onClick={this.burgerButtonHandler}
+            isOpen={!this.state.isMenuModalVisible}
+          />
+
+          {/* {screenWidth < 1000 ? (
             <BurgerButton
               onClick={this.burgerButtonHandler}
               isOpen={!this.state.isMenuModalVisible}
@@ -63,7 +68,7 @@ export default class Home extends React.Component {
               items={this.state.menu}
               onItemClick={this.scrollHandler}
             />
-          )}
+          )} */}
         </Nav>
         {this.state.isMenuModalVisible ? (
           <MobileNav items={this.state.menu} onItemClick={this.scrollHandler} />

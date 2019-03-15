@@ -199,7 +199,7 @@ const Service = styled.div`
   margin-bottom: ${props => (props.top ? "2rem" : 0)};
 
   p {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
   h4 {
     margin-bottom: 0.2rem;
